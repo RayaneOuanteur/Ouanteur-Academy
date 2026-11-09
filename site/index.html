@@ -1,0 +1,785 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ouanteur Academy : cours d'allemand en ligne, -20 % pour les 20 premiers</title>
+<meta name="description" content="Cours d'allemand en ligne en direct pour préparer vos tests de langue et votre candidature en Ausbildung. 20 % de réduction pour les 20 premiers inscrits.">
+<meta property="og:title" content="Ouanteur Academy : cours d'allemand en ligne, -20 % pour les 20 premiers">
+<meta property="og:description" content="Préparez vos tests d'allemand et votre Ausbildung. Réservez votre place avant que les 20 soient prises.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0A1A2E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Figtree:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<style>
+/* Mise en page : bandeau sombre en haut (texte + compteur de places) avec la carte du formulaire
+   à droite sur ordinateur, sous le texte sur mobile. Ensuite : avantages, étapes, FAQ, rappel. */
+:root{
+  --night:#0A1A2E;
+  --night-2:#12294A;
+  --ink:#0E2038;
+  --ink-soft:#44566E;
+  --paper:#F3F6F9;
+  --white:#FFFFFF;
+  --line:#D6DFE9;
+  --teal:#0C7C7A;
+  --teal-deep:#075655;
+  --sun:#FFB81F;
+  --sun-deep:#F29D00;
+  --sun-ink:#2B1D00;
+  --err:#B3261E;
+  --ok:#17794A;
+  --font-display:'Bricolage Grotesque','Segoe UI',system-ui,-apple-system,sans-serif;
+  --font-body:'Figtree','Segoe UI',system-ui,-apple-system,sans-serif;
+  --gut:clamp(16px,5vw,40px);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font-body);font-size:17px;line-height:1.55;
+  padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
+img,svg{max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:var(--font-display);line-height:1.08;margin:0;text-wrap:balance;letter-spacing:-.01em}
+p{margin:0}
+.wrap{width:100%;max-width:1120px;margin-inline:auto;padding-inline:var(--gut)}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px;border-radius:6px}
+
+/* ---------- En-tête ---------- */
+.top{background:var(--night);color:var(--white)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:14px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--font-display);font-weight:700;font-size:1.05rem;min-width:0}
+.brand span:last-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.brand-mark{flex:none;width:34px;height:34px;display:grid;place-items:center;background:var(--sun);color:var(--sun-ink);border-radius:10px 10px 10px 2px}
+.top-cta{flex:none;font-weight:600;font-size:.92rem;text-decoration:none;border:1.5px solid rgba(255,255,255,.35);padding:8px 14px;border-radius:999px}
+.top-cta:hover{background:rgba(255,255,255,.1)}
+.bar-end{display:flex;align-items:center;gap:10px;flex:none}
+.lang-switch{display:flex;gap:2px;padding:3px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18)}
+.lang-switch button{font:inherit;font-weight:700;font-size:.82rem;color:#C9D5E4;background:transparent;border:0;border-radius:999px;padding:6px 10px;min-width:38px;min-height:32px;cursor:pointer}
+.lang-switch button:hover{color:#fff;background:rgba(255,255,255,.1)}
+.lang-switch button[aria-pressed=true]{background:var(--sun);color:var(--sun-ink)}
+.lang-switch button[lang=ar]{font-family:'IBM Plex Sans Arabic',var(--font-body);font-size:.9rem}
+@media (max-width:520px){.top-cta{display:none}}
+
+/* ---------- Bandeau principal ---------- */
+.hero{background:var(--night);color:var(--white)}
+.hero-grid{display:grid;gap:32px;padding-block:clamp(28px,6vw,64px) 0}
+.hero-copy{min-width:0}
+.eyebrow{display:inline-block;font-size:.8rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--sun);margin-bottom:16px}
+h1{font-size:clamp(1.95rem,6.6vw,3.3rem);font-weight:800}
+h1 .hl{color:var(--sun);white-space:nowrap}
+.lead{margin-top:18px;font-size:clamp(1.02rem,2.6vw,1.2rem);color:#C9D5E4;max-width:34em}
+
+.greets{list-style:none;margin:26px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.greets li{font-family:var(--font-display);font-weight:600;font-size:.95rem;padding:7px 14px;border-radius:14px 14px 14px 3px;background:var(--night-2);color:#DCE6F3}
+.greets li:nth-child(2){background:var(--teal);color:#fff;border-radius:14px 14px 3px 14px}
+.greets li:nth-child(4){background:#FFE3A6;color:var(--sun-ink);border-radius:14px 14px 3px 14px}
+
+/* ---------- Carte du formulaire ---------- */
+.form-card{background:var(--white);color:var(--ink);border-radius:20px;padding:clamp(20px,4vw,30px);box-shadow:0 24px 60px -20px rgba(5,15,30,.55);
+  scroll-margin-top:16px;position:relative;z-index:2;min-width:0}
+.form-card h2{font-size:1.65rem;font-weight:800}
+.form-card .sub{margin-top:6px;color:var(--ink-soft);font-size:.98rem}
+form{margin-top:18px;display:grid;gap:14px}
+.row2{display:grid;gap:14px}
+.field{display:grid;gap:6px;min-width:0}
+label,.label{font-weight:600;font-size:.92rem}
+input[type=text],input[type=email]{width:100%;font:inherit;font-size:1.02rem;color:var(--ink);background:var(--white);border:1.5px solid #B9C6D6;border-radius:12px;padding:13px 14px;min-height:50px}
+input::placeholder{color:#8798AE}
+input:hover{border-color:#8FA2BA}
+input:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 4px rgba(12,124,122,.18)}
+input[aria-invalid=true]{border-color:var(--err);box-shadow:0 0 0 4px rgba(179,38,30,.12)}
+.err{color:var(--err);font-size:.85rem;min-height:0}
+.err:empty{display:none}
+.consent{font-weight:400;display:grid;grid-template-columns:22px 1fr;gap:10px;align-items:start;font-size:.86rem;color:var(--ink-soft)}
+.consent input{width:22px;height:22px;margin:1px 0 0;accent-color:var(--teal)}
+.hp{position:absolute!important;left:-9999px;width:1px;height:1px;overflow:hidden}
+.cta{font:inherit;font-weight:800;font-size:1.08rem;font-family:var(--font-display);cursor:pointer;border:0;border-radius:14px;min-height:56px;padding:14px 20px;
+  background:var(--sun);color:var(--sun-ink);box-shadow:0 5px 0 var(--sun-deep);transition:transform .08s,box-shadow .08s;width:100%}
+.cta:hover{transform:translateY(1px);box-shadow:0 4px 0 var(--sun-deep)}
+.cta:active{transform:translateY(5px);box-shadow:0 0 0 var(--sun-deep)}
+.cta[disabled]{opacity:.7;cursor:progress}
+.form-msg{font-size:.9rem;color:var(--err);min-height:0}
+.form-msg:empty{display:none}
+.fine{font-size:.78rem;color:var(--ink-soft);line-height:1.45}
+
+.done{display:none;text-align:start}
+.done.on{display:block}
+.done .tick{width:54px;height:54px;border-radius:50%;background:#DDF3E8;color:var(--ok);display:grid;place-items:center;margin-bottom:14px}
+.done h2{font-size:1.6rem}
+.done p{margin-top:10px;color:var(--ink-soft)}
+.done .rank{display:inline-block;margin-top:14px;font-family:var(--font-display);font-weight:800;background:var(--night);color:var(--sun);padding:8px 14px;border-radius:12px}
+
+/* ---------- Sections ---------- */
+section.block{padding-block:clamp(44px,8vw,84px)}
+.kicker{font-size:.8rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--teal)}
+h2.title{font-size:clamp(1.7rem,4.8vw,2.6rem);font-weight:800;margin-top:10px;max-width:18em}
+.benefits{list-style:none;padding:0;margin:32px 0 0;display:grid;gap:14px}
+.benefits li{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:20px;display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start}
+.benefits .ic{width:44px;height:44px;border-radius:12px;background:#DDF1F0;color:var(--teal-deep);display:grid;place-items:center}
+.benefits h3{font-size:1.15rem;font-weight:700}
+.benefits p{margin-top:4px;color:var(--ink-soft);font-size:.98rem}
+.langs{margin-top:28px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.langs .label{margin-right:4px}
+.langs span.chip{padding:7px 14px;border-radius:999px;border:1.5px solid var(--line);background:var(--white);font-weight:600;font-size:.95rem}
+
+.steps-wrap{background:var(--white);border-block:1px solid var(--line)}
+.steps{list-style:none;padding:0;margin:32px 0 0;display:grid;gap:22px;counter-reset:s}
+.steps li{counter-increment:s;display:grid;grid-template-columns:48px 1fr;gap:16px;align-items:start}
+.steps li::before{content:counter(s);font-family:var(--font-display);font-weight:800;font-size:1.3rem;width:48px;height:48px;display:grid;place-items:center;background:var(--night);color:var(--sun);border-radius:14px 14px 14px 3px}
+.steps h3{font-size:1.15rem;font-weight:700;padding-top:2px}
+.steps p{margin-top:4px;color:var(--ink-soft);font-size:.98rem}
+
+.faq{margin-top:28px;display:grid;gap:10px;max-width:46em}
+details{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:0}
+summary{cursor:pointer;list-style:none;padding:16px 18px;font-weight:700;display:flex;justify-content:space-between;gap:16px;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--font-display);font-size:1.5rem;line-height:1;color:var(--teal);flex:none}
+details[open] summary::after{content:"–"}
+details p{padding:0 18px 18px;color:var(--ink-soft);font-size:.98rem}
+
+.final{background:var(--night);color:var(--white);text-align:start}
+.final .wrap{display:grid;gap:20px;align-items:center;padding-block:clamp(40px,7vw,64px)}
+.final h2{font-size:clamp(1.6rem,4.6vw,2.4rem);font-weight:800;max-width:16em}
+.final .cta{max-width:340px;text-decoration:none;text-align:center;display:inline-grid;place-items:center}
+footer{background:var(--night);color:#93A6BF;font-size:.82rem;padding:22px 0 calc(22px + env(safe-area-inset-bottom,0px));border-top:1px solid rgba(255,255,255,.1)}
+footer .wrap{display:grid;gap:6px}
+footer a{color:#C9D5E4}
+
+/* ---------- Écrans larges ---------- */
+@media (min-width:560px){
+  .row2{grid-template-columns:1fr 1fr}
+  .benefits{grid-template-columns:1fr 1fr}
+}
+@media (min-width:900px){
+  .hero-grid{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:56px;align-items:start;padding-bottom:64px}
+  .form-card{position:sticky;top:20px}
+  .steps{grid-template-columns:repeat(3,1fr);gap:28px}
+  .steps li{grid-template-columns:1fr;gap:14px}
+  .final .wrap{grid-template-columns:1fr auto}
+}
+@media (max-width:899px){
+  .hero-grid{padding-bottom:28px}
+}
+/* ---------- Arabe (droite à gauche) ---------- */
+html[lang=ar]{--font-display:'IBM Plex Sans Arabic','Bricolage Grotesque',system-ui,sans-serif;--font-body:'IBM Plex Sans Arabic','Figtree',system-ui,sans-serif}
+html[lang=ar] h1,html[lang=ar] h2,html[lang=ar] h3,html[lang=ar] .eyebrow,html[lang=ar] .kicker{letter-spacing:0;text-transform:none}
+html[lang=ar] h1,html[lang=ar] h2,html[lang=ar] h3{line-height:1.3}
+html[lang=ar] .eyebrow,html[lang=ar] .kicker{font-size:.92rem}
+html[lang=ar] body{line-height:1.75}
+.greets{direction:ltr}
+html[dir=rtl] .greets{justify-content:flex-end}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="#">
+      <span class="brand-mark" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H11l-5 4v-4H4z"/></svg>
+      </span>
+      <span data-school>Ouanteur Academy</span>
+    </a>
+    <div class="bar-end">
+      <div class="lang-switch" role="group" aria-label="Langue / Language / اللغة">
+        <button type="button" data-lang="fr" lang="fr" aria-pressed="true" title="Français">FR</button>
+        <button type="button" data-lang="en" lang="en" aria-pressed="false" title="English">EN</button>
+        <button type="button" data-lang="ar" lang="ar" aria-pressed="false" title="العربية">ع</button>
+      </div>
+      <a class="top-cta" href="#inscription" data-i18n="topCta">Réserver ma place</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="hero" aria-labelledby="titre">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow" data-i18n="eyebrow">Offre de lancement · allemand en ligne</span>
+      <h1 id="titre" data-i18n-html="h1">Préparez vos tests d'allemand et votre Ausbildung. <span class="hl">–20&nbsp;%</span> pour les 20&nbsp;premiers inscrits.</h1>
+      <p class="lead" data-i18n="lead">Des cours d'allemand en direct, depuis chez vous, pour vous préparer aux tests de langue et à votre candidature en Ausbildung. Laissez vos coordonnées pour réserver votre place avant que les 20 soient prises.</p>
+
+      <ul class="greets" aria-hidden="true">
+        <li>Guten Tag</li><li>Hallo</li><li>Ich lerne Deutsch</li><li>Ausbildung</li>
+      </ul>
+    </div>
+
+    <div class="form-card" id="inscription">
+      <div id="formView">
+        <h2 id="formTitle">Je réserve ma place</h2>
+        <p class="sub" id="formSub">Quatre champs, une minute. Remplir ce formulaire ne vous engage à rien.</p>
+
+        <form id="leadForm" novalidate>
+          <div class="row2">
+            <div class="field">
+              <label for="prenom" data-i18n="lPrenom">Prénom</label>
+              <input id="prenom" name="prenom" type="text" autocomplete="given-name" autocapitalize="words" maxlength="60" required aria-describedby="e-prenom">
+              <div class="err" id="e-prenom" role="alert"></div>
+            </div>
+            <div class="field">
+              <label for="nom" data-i18n="lNom">Nom</label>
+              <input id="nom" name="nom" type="text" autocomplete="family-name" autocapitalize="words" maxlength="60" required aria-describedby="e-nom">
+              <div class="err" id="e-nom" role="alert"></div>
+            </div>
+          </div>
+          <div class="field">
+            <label for="email" data-i18n="lEmail">Adresse e-mail</label>
+            <input id="email" name="email" type="email" dir="ltr" autocomplete="email" inputmode="email" autocapitalize="none" spellcheck="false" maxlength="120" placeholder="vous@exemple.com" required aria-describedby="e-email">
+            <div class="err" id="e-email" role="alert"></div>
+          </div>
+          <div class="field">
+            <label for="ville" data-i18n="lVille">Ville de résidence</label>
+            <input id="ville" name="ville" type="text" autocomplete="address-level2" autocapitalize="words" maxlength="80" required aria-describedby="e-ville">
+            <div class="err" id="e-ville" role="alert"></div>
+          </div>
+
+          <label class="consent" for="consent">
+            <input id="consent" name="consent" type="checkbox" required aria-describedby="e-consent">
+            <span id="consentText"></span>
+          </label>
+          <div class="err" id="e-consent" role="alert"></div>
+
+          <!-- Champ piège contre les robots : doit rester vide -->
+          <div class="hp" aria-hidden="true"><label for="website">Ne pas remplir</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+
+          <!-- Origine de la publicité et langue (remplis automatiquement) -->
+          <input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign">
+          <input type="hidden" name="utm_content"><input type="hidden" name="utm_term"><input type="hidden" name="gclid"><input type="hidden" name="fbclid">
+          <input type="hidden" name="page"><input type="hidden" name="referrer"><input type="hidden" name="langue" value="fr">
+
+          <div class="form-msg" id="formMsg" role="alert"></div>
+          <button class="cta" id="submitBtn" type="submit">Je souhaite profiter de l'offre</button>
+          <p class="fine"><span data-i18n="fine">Vos informations servent uniquement à vous répondre au sujet de cette offre.</span> <a id="privacyLink" href="#" hidden data-i18n="privacy">Politique de confidentialité</a></p>
+        </form>
+      </div>
+
+      <div class="done" id="doneView" tabindex="-1">
+        <div class="tick" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+        <h2 id="doneTitle"></h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" aria-labelledby="avantages">
+  <div class="wrap">
+    <span class="kicker" data-i18n="whyKicker">Pourquoi Ouanteur Academy</span>
+    <h2 class="title" id="avantages" data-i18n="whyTitle">Un allemand utile pour vos tests et votre projet en Allemagne</h2>
+    <ul class="benefits">
+      <li>
+        <span class="ic" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg></span>
+        <div><h3 data-i18n="b1t">Depuis chez vous, où que vous soyez</h3><p data-i18n="b1p">Aucun déplacement. Un ordinateur, une connexion, et vous êtes en classe, quel que soit votre pays.</p></div>
+      </li>
+      <li>
+        <span class="ic" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+        <div><h3 data-i18n="b2t">Préparation aux tests d'allemand</h3><p data-i18n="b2p">On travaille la compréhension et l'expression, à l'oral comme à l'écrit, dans l'esprit des épreuves des tests de langue.</p></div>
+      </li>
+      <li>
+        <span class="ic" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H11l-5 4v-4H4z"/></svg></span>
+        <div><h3 data-i18n="b3t">Préparation à l'Ausbildung</h3><p data-i18n="b3p">Vous vous exercez, en allemand, aux étapes d'une candidature : lettre de motivation, CV et entretien.</p></div>
+      </li>
+      <li>
+        <span class="ic" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></svg></span>
+        <div><h3 data-i18n="b4t">Un niveau et un horaire qui vous correspondent</h3><p data-i18n="b4p">On part de votre niveau actuel et on cherche le créneau qui entre dans votre semaine.</p></div>
+      </li>
+    </ul>
+    <div class="langs" id="langs" hidden></div>
+  </div>
+</section>
+
+<div class="steps-wrap">
+  <section class="block" aria-labelledby="etapes">
+    <div class="wrap">
+      <span class="kicker" data-i18n="stepsKicker">Comment ça marche</span>
+      <h2 class="title" id="etapes" data-i18n="stepsTitle">De ce formulaire à votre premier cours</h2>
+      <ol class="steps">
+        <li><div><h3 data-i18n="s1t">Vous réservez votre place</h3><p data-i18n="s1p">Vous remplissez le formulaire. Si vous êtes parmi les 20 premiers, votre rabais de 20 % est mis de côté pour vous.</p></div></li>
+        <li><div><h3 data-i18n="s2t">Vous recevez un e-mail</h3><p data-i18n="s2p">Il confirme votre place et vous explique la suite. Aucune carte de crédit n'est demandée à cette étape.</p></div></li>
+        <li><div><h3 data-i18n="s3t">On choisit le bon cours</h3><p data-i18n="s3p">Notre équipe vous contacte pour comprendre votre objectif (test d'allemand ou Ausbildung), évaluer votre niveau et finaliser l'inscription.</p></div></li>
+      </ol>
+    </div>
+  </section>
+</div>
+
+<section class="block" aria-labelledby="faq">
+  <div class="wrap">
+    <span class="kicker" data-i18n="faqKicker">Questions fréquentes</span>
+    <h2 class="title" id="faq" data-i18n="faqTitle">Avant de vous inscrire</h2>
+    <div class="faq">
+      <details>
+        <summary data-i18n="q1">Comment les 20 places sont-elles attribuées ?</summary>
+        <p data-i18n="a1">Selon l'ordre d'arrivée des formulaires. Les 20 premières personnes obtiennent 20 % de réduction sur leur première inscription. Les suivantes sont placées sur une liste d'attente et sont prévenues si l'offre revient.</p>
+      </details>
+      <details>
+        <summary data-i18n="q2">Est-ce que je m'engage en remplissant le formulaire ?</summary>
+        <p data-i18n="a2">Non. Vous réservez simplement votre place pour l'offre. L'inscription n'est finalisée qu'après un échange avec notre équipe, et vous restez libre de dire non.</p>
+      </details>
+      <details>
+        <summary data-i18n="q3">Quels cours proposez-vous ?</summary>
+        <p data-i18n="a3">Pour le moment, Ouanteur Academy se consacre à l'allemand, en ligne : préparation aux tests d'allemand et à la candidature en Ausbildung. Notre équipe vous guide vers le bon niveau lors de votre premier échange.</p>
+      </details>
+      <details>
+        <summary data-i18n="q4">Que faites-vous de mes informations ?</summary>
+        <p data-i18n="a4">Nous les utilisons uniquement pour vous répondre au sujet de cette offre et de nos cours. Chaque courriel contient une façon simple de vous désabonner.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2 id="finalTitle">Il reste des places ? Réservez la vôtre maintenant.</h2>
+    <a class="cta" href="#inscription" data-i18n="cta">Je souhaite profiter de l'offre</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="year"></span> <span data-school>Ouanteur Academy</span>. <span data-i18n="footer">Offre limitée aux 20 premières inscriptions, sur la première inscription seulement.</span></span>
+    <span id="legalLine"></span>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   RÉGLAGES
+   ============================================================ */
+const CONFIG = {
+  schoolName: "Ouanteur Academy",         // nom affiché dans l'en-tête, le pied de page et les courriels
+  endpoint: (typeof window !== "undefined" && window.GOOGLE_SHEET_ENDPOINT) ? window.GOOGLE_SHEET_ENDPOINT : "https://script.google.com/macros/s/AKfycbyE41q89sJtluyzuF9FavKe1OddL-fpoZz1_35tCD3R3Gzs3QhO58qfShtLHlDm63BT/exec",
+  totalSeats: 20,                         // doit être identique à TOTAL_SEATS dans backend/Code.gs
+  showProgrammes: true,                   // afficher la liste des programmes sous les avantages
+  privacyUrl: "",                         // lien vers votre politique de confidentialité (recommandé)
+  legalLine: "",                          // ex. adresse postale de l'école
+  googleTagId: "",                        // ex. "AW-1234567890" (Google Ads) ou "G-XXXXXXXXXX"
+  googleAdsConversion: "",                // ex. "AW-1234567890/AbCdEfGhIjKl" (étiquette de conversion Prospect)
+  metaPixelId: ""                         // identifiant du pixel Meta
+};
+
+/* ============================================================
+   TRADUCTIONS (français, anglais, arabe)
+   {n} = nombre, {total} = nombre total de places, {name} = prénom, {school} = nom de l'école
+   ============================================================ */
+const I18N = {
+  fr: {
+    title: "Ouanteur Academy : cours d'allemand en ligne, -20 % pour les 20 premiers",
+    metaDesc: "Cours d'allemand en ligne en direct pour préparer vos tests de langue et votre candidature en Ausbildung. 20 % de réduction pour les 20 premiers inscrits.",
+    topCta: "Réserver ma place",
+    eyebrow: "Offre de lancement · allemand en ligne",
+    h1: "Préparez vos tests d'allemand et votre Ausbildung. <span class=\"hl\">–20&nbsp;%</span> pour les 20&nbsp;premiers inscrits.",
+    lead: "Des cours d'allemand en direct, depuis chez vous, pour vous préparer aux tests de langue et à votre candidature en Ausbildung. Laissez vos coordonnées pour réserver votre place avant que les 20 soient prises.",
+    finalDefault: "Réservez votre place pour profiter de l'offre.",
+    finalFull: "L'offre est complète. Rejoignez la liste d'attente.",
+    formTitle: "Je réserve ma place",
+    formSub: "Quatre champs, une minute. Remplir ce formulaire ne vous engage à rien.",
+    waitTitle: "Rejoindre la liste d'attente",
+    waitSub: "Vous serez prévenu(e) si l'offre revient. Ce formulaire ne vous engage à rien.",
+    cta: "Je souhaite profiter de l'offre",
+    ctaWait: "Je rejoins la liste d'attente",
+    sending: "Envoi en cours…",
+    lPrenom: "Prénom", lNom: "Nom", lEmail: "Adresse e-mail", lVille: "Ville de résidence",
+    emailPh: "vous@exemple.com",
+    consent: "J'accepte de recevoir des courriels de {school} au sujet de cette offre et de nos cours. Je peux me désabonner à tout moment.",
+    fine: "Vos informations servent uniquement à vous répondre au sujet de cette offre.",
+    privacy: "Politique de confidentialité",
+    ePrenom: "Entrez votre prénom.",
+    eNom: "Entrez votre nom.",
+    eEmail: "Entrez une adresse e-mail valide, par exemple vous@exemple.com.",
+    eVille: "Entrez votre ville de résidence.",
+    eConsent: "Cochez la case pour recevoir notre réponse par courriel.",
+    eSubmit: "Une erreur est survenue, votre demande n'a pas été enregistrée. Vérifiez votre connexion puis réessayez.",
+    thanksTitle: "Merci !",
+    whyKicker: "Pourquoi Ouanteur Academy",
+    whyTitle: "Un allemand utile pour vos tests et votre projet en Allemagne",
+    b1t: "Depuis chez vous, où que vous soyez",
+    b1p: "Aucun déplacement. Un ordinateur, une connexion, et vous êtes en classe, quel que soit votre pays.",
+    b2t: "Préparation aux tests d'allemand",
+    b2p: "On travaille la compréhension et l'expression, à l'oral comme à l'écrit, dans l'esprit des épreuves des tests de langue.",
+    b3t: "Préparation à l'Ausbildung",
+    b3p: "Vous vous exercez, en allemand, aux étapes d'une candidature : lettre de motivation, CV et entretien.",
+    b4t: "Un niveau et un horaire qui vous correspondent",
+    b4p: "On part de votre niveau actuel et on cherche le créneau qui entre dans votre semaine.",
+    progLabel: "Programmes :",
+    programmes: ["Préparation aux tests d'allemand", "Préparation à l'Ausbildung"],
+    stepsKicker: "Comment ça marche",
+    stepsTitle: "De ce formulaire à votre premier cours",
+    s1t: "Vous réservez votre place",
+    s1p: "Vous remplissez le formulaire. Si vous êtes parmi les 20 premiers, votre rabais de 20 % est mis de côté pour vous.",
+    s2t: "Vous recevez un e-mail",
+    s2p: "Il confirme votre place et vous explique la suite. Aucune carte de crédit n'est demandée à cette étape.",
+    s3t: "On choisit le bon cours",
+    s3p: "Notre équipe vous contacte pour comprendre votre objectif (test d'allemand ou Ausbildung), évaluer votre niveau et finaliser l'inscription.",
+    faqKicker: "Questions fréquentes",
+    faqTitle: "Avant de vous inscrire",
+    q1: "Comment les 20 places sont-elles attribuées ?",
+    a1: "Selon l'ordre d'arrivée des formulaires. Les 20 premières personnes obtiennent 20 % de réduction sur leur première inscription. Les suivantes sont placées sur une liste d'attente et sont prévenues si l'offre revient.",
+    q2: "Est-ce que je m'engage en remplissant le formulaire ?",
+    a2: "Non. Vous réservez simplement votre place pour l'offre. L'inscription n'est finalisée qu'après un échange avec notre équipe, et vous restez libre de dire non.",
+    q3: "Quels cours proposez-vous ?",
+    a3: "Pour le moment, Ouanteur Academy se consacre à l'allemand, en ligne : préparation aux tests d'allemand et à la candidature en Ausbildung. Notre équipe vous guide vers le bon niveau lors de votre premier échange.",
+    q4: "Que faites-vous de mes informations ?",
+    a4: "Nous les utilisons uniquement pour vous répondre au sujet de cette offre et de nos cours. Chaque courriel contient une façon simple de vous désabonner.",
+    footer: "Offre limitée aux 20 premières inscriptions, sur la première inscription seulement."
+  },
+
+  en: {
+    title: "Ouanteur Academy: online German classes, 20% off for the first 20",
+    metaDesc: "Live online German classes to prepare for your language tests and your Ausbildung application. 20% off for the first 20 sign-ups.",
+    topCta: "Book my spot",
+    eyebrow: "Launch offer · German online",
+    h1: "Prepare for your German tests and your Ausbildung. <span class=\"hl\">20%&nbsp;off</span> for the first 20&nbsp;sign-ups.",
+    lead: "Live German classes from home to prepare for language tests and your Ausbildung application. Leave your details to book your spot before all 20 are taken.",
+    finalDefault: "Reserve your place and take advantage of the offer.",
+    finalFull: "The offer is full. Join the waiting list.",
+    formTitle: "Book my spot",
+    formSub: "Four fields, one minute. Filling in this form doesn't commit you to anything.",
+    waitTitle: "Join the waiting list",
+    waitSub: "We'll let you know if the offer comes back. This form doesn't commit you to anything.",
+    cta: "I want this offer",
+    ctaWait: "Join the waiting list",
+    sending: "Sending…",
+    lPrenom: "First name", lNom: "Last name", lEmail: "Email address", lVille: "City of residence",
+    emailPh: "you@example.com",
+    consent: "I agree to receive emails from {school} about this offer and our classes. I can unsubscribe at any time.",
+    fine: "Your information is only used to reply to you about this offer.",
+    privacy: "Privacy policy",
+    ePrenom: "Enter your first name.",
+    eNom: "Enter your last name.",
+    eEmail: "Enter a valid email address, for example you@example.com.",
+    eVille: "Enter your city of residence.",
+    eConsent: "Tick the box so we can reply to you by email.",
+    eSubmit: "Something went wrong and your request was not saved. Check your connection and try again.",
+    thanksTitle: "Thank you!",
+    whyKicker: "Why Ouanteur Academy",
+    whyTitle: "Practical German for your tests and your plans in Germany",
+    b1t: "From home, wherever you are",
+    b1p: "No commuting. A computer, an internet connection, and you're in class, whatever country you live in.",
+    b2t: "German test preparation",
+    b2p: "We work on comprehension and expression, spoken and written, in the style of language test exams.",
+    b3t: "Ausbildung preparation",
+    b3p: "You practise each step of an application in German: cover letter, CV and interview.",
+    b4t: "A level and schedule that fit you",
+    b4p: "We start from your current level and find a time slot that fits your week.",
+    progLabel: "Programmes:",
+    programmes: ["German test preparation", "Ausbildung preparation"],
+    stepsKicker: "How it works",
+    stepsTitle: "From this form to your first class",
+    s1t: "You book your spot",
+    s1p: "You fill in the form. If you're among the first 20, your 20% discount is set aside for you.",
+    s2t: "You receive an email",
+    s2p: "It confirms your spot and explains what happens next. No credit card is needed at this stage.",
+    s3t: "We choose the right class",
+    s3p: "Our team contacts you to understand your goal (German test or Ausbildung), assess your level and complete your enrolment.",
+    faqKicker: "Frequently asked questions",
+    faqTitle: "Before you sign up",
+    q1: "How are the 20 spots allocated?",
+    a1: "On a first-come, first-served basis. The first 20 people get 20% off their first enrolment. Everyone after that goes on a waiting list and is notified if the offer comes back.",
+    q2: "Am I committing to anything by filling in the form?",
+    a2: "No. You're simply reserving your spot for the offer. Enrolment is only finalised after a conversation with our team, and you're free to say no.",
+    q3: "What classes do you offer?",
+    a3: "For now, Ouanteur Academy focuses on German, online: preparation for German tests and for Ausbildung applications. Our team guides you to the right level during your first conversation.",
+    q4: "What do you do with my information?",
+    a4: "We only use it to reply to you about this offer and our classes. Every email includes a simple way to unsubscribe.",
+    footer: "Offer limited to the first 20 sign-ups, on the first enrolment only."
+  },
+
+  ar: {
+    title: "أكاديمية Ouanteur: دروس اللغة الألمانية عبر الإنترنت، خصم 20% لأول 20 مسجّلًا",
+    metaDesc: "دروس مباشرة في اللغة الألمانية عبر الإنترنت للتحضير لاختبارات اللغة ولملف الترشح للـ Ausbildung. خصم 20% لأول 20 مسجّلًا.",
+    topCta: "احجز مقعدي",
+    eyebrow: "عرض الإطلاق · الألمانية عبر الإنترنت",
+    h1: "حضّر لاختبارات اللغة الألمانية وللـ Ausbildung. <span class=\"hl\">خصم 20%</span> لأول 20 مسجّلًا.",
+    lead: "دروس مباشرة في اللغة الألمانية من منزلك، للتحضير لاختبارات اللغة ولملف ترشحك للـ Ausbildung. اترك معلوماتك لحجز مقعدك قبل أن تُحجز المقاعد العشرون.",
+    finalDefault: "احجز مقعدك للاستفادة من العرض.",
+    finalFull: "اكتمل العرض. انضم إلى قائمة الانتظار.",
+    formTitle: "أحجز مقعدي",
+    formSub: "أربع خانات، دقيقة واحدة. ملء هذه الاستمارة لا يُلزمك بأي شيء.",
+    waitTitle: "الانضمام إلى قائمة الانتظار",
+    waitSub: "سنُعلمك إذا عاد العرض. هذه الاستمارة لا تُلزمك بأي شيء.",
+    cta: "أريد الاستفادة من العرض",
+    ctaWait: "أنضم إلى قائمة الانتظار",
+    sending: "جارٍ الإرسال…",
+    lPrenom: "الاسم الشخصي", lNom: "اسم العائلة", lEmail: "البريد الإلكتروني", lVille: "مدينة الإقامة",
+    emailPh: "you@example.com",
+    consent: "أوافق على تلقي رسائل بريد إلكتروني من {school} بخصوص هذا العرض ودروسنا. يمكنني إلغاء الاشتراك في أي وقت.",
+    fine: "تُستخدم معلوماتك فقط للرد عليك بخصوص هذا العرض.",
+    privacy: "سياسة الخصوصية",
+    ePrenom: "أدخل اسمك الشخصي.",
+    eNom: "أدخل اسم عائلتك.",
+    eEmail: "أدخل بريدًا إلكترونيًا صحيحًا، مثل you@example.com.",
+    eVille: "أدخل مدينة إقامتك.",
+    eConsent: "ضع علامة في الخانة لنتمكن من الرد عليك عبر البريد الإلكتروني.",
+    eSubmit: "حدث خطأ ولم يتم تسجيل طلبك. تحقق من اتصالك بالإنترنت ثم أعد المحاولة.",
+    thanksTitle: "شكرًا!",
+    whyKicker: "لماذا أكاديمية Ouanteur",
+    whyTitle: "ألمانية مفيدة لاختباراتك ولمشروعك في ألمانيا",
+    b1t: "من منزلك، أينما كنت",
+    b1p: "دون تنقّل. حاسوب واتصال بالإنترنت وتكون في القسم، مهما كان بلدك.",
+    b2t: "التحضير لاختبارات اللغة الألمانية",
+    b2p: "نشتغل على الفهم والتعبير، شفهيًا وكتابيًا، على نمط امتحانات اختبارات اللغة.",
+    b3t: "التحضير للـ Ausbildung",
+    b3p: "تتدرّب بالألمانية على مراحل ملف الترشح: رسالة التحفيز والسيرة الذاتية والمقابلة.",
+    b4t: "مستوى وتوقيت يناسبانك",
+    b4p: "ننطلق من مستواك الحالي ونبحث عن التوقيت الذي يناسب أسبوعك.",
+    progLabel: "البرامج:",
+    programmes: ["التحضير لاختبارات اللغة الألمانية", "التحضير للـ Ausbildung"],
+    stepsKicker: "كيف يعمل ذلك",
+    stepsTitle: "من هذه الاستمارة إلى درسك الأول",
+    s1t: "تحجز مقعدك",
+    s1p: "تملأ الاستمارة. إذا كنت من بين أول 20 مسجّلًا، يُحفظ لك خصم 20%.",
+    s2t: "تتلقى رسالة بريد إلكتروني",
+    s2p: "تؤكد مقعدك وتشرح لك الخطوات التالية. لا تُطلب أي بطاقة بنكية في هذه المرحلة.",
+    s3t: "نختار الدرس المناسب",
+    s3p: "يتواصل معك فريقنا لفهم هدفك (اختبار اللغة الألمانية أو الـ Ausbildung)، وتقييم مستواك، وإتمام التسجيل.",
+    faqKicker: "أسئلة شائعة",
+    faqTitle: "قبل التسجيل",
+    q1: "كيف تُمنح المقاعد العشرون؟",
+    a1: "حسب ترتيب وصول الاستمارات. يحصل أول 20 شخصًا على خصم 20% على تسجيلهم الأول. أما الباقون فيُوضعون في قائمة انتظار ويتم إعلامهم إذا عاد العرض.",
+    q2: "هل ألتزم بشيء عند ملء الاستمارة؟",
+    a2: "لا. أنت تحجز مقعدك في العرض فقط. لا يكتمل التسجيل إلا بعد محادثة مع فريقنا، ولك كامل الحرية في الرفض.",
+    q3: "ما الدروس التي تقدمونها؟",
+    a3: "حاليًا، تتخصص أكاديمية Ouanteur في اللغة الألمانية عبر الإنترنت: التحضير لاختبارات اللغة الألمانية ولملف الترشح للـ Ausbildung. يرشدك فريقنا إلى المستوى المناسب خلال أول محادثة.",
+    q4: "ماذا تفعلون بمعلوماتي؟",
+    a4: "نستخدمها فقط للرد عليك بخصوص هذا العرض ودروسنا. تتضمن كل رسالة طريقة بسيطة لإلغاء الاشتراك.",
+    footer: "عرض محدود لأول 20 تسجيلًا، على التسجيل الأول فقط."
+  }
+};
+const LANGS = Object.keys(I18N);
+
+/* ---------- Utilitaires ---------- */
+const $ = (s, r = document) => r.querySelector(s);
+const form = $("#leadForm");
+const TRACK_KEYS = ["utm_source","utm_medium","utm_campaign","utm_content","utm_term","gclid","fbclid"];
+const DEMO = !CONFIG.endpoint || CONFIG.endpoint.includes("PASTEZ") || CONFIG.endpoint.includes("script.google.com/macros/s/EXEMPLE");
+
+let lang = "fr";
+const state = { taken: null, full: false, result: null, prenom: "", sending: false };
+
+function t(key, vars = {}){
+  let v = I18N[lang][key] ?? I18N.fr[key] ?? key;
+  if (typeof v === "function") return v(vars.n);
+  return String(v).replace(/\{(\w+)\}/g, (_, k) => vars[k] ?? "");
+}
+
+function pickInitialLang(){
+  const q = new URLSearchParams(location.search).get("lang");
+  if (LANGS.includes(q)) return q;
+  try { const s = localStorage.getItem("lang"); if (LANGS.includes(s)) return s; } catch (e) {}
+  const nav = (navigator.languages || [navigator.language || ""]).map(l => l.slice(0, 2).toLowerCase());
+  return nav.find(l => LANGS.includes(l)) || "fr";
+}
+
+function setLang(next, save){
+  lang = LANGS.includes(next) ? next : "fr";
+  if (save) { try { localStorage.setItem("lang", lang); } catch (e) {} }
+  const html = document.documentElement;
+  html.lang = lang;
+  html.dir = lang === "ar" ? "rtl" : "ltr";
+
+  document.title = t("title");
+  const md = document.querySelector('meta[name="description"]'); if (md) md.content = t("metaDesc");
+  const ot = document.querySelector('meta[property="og:title"]'); if (ot) ot.content = t("title");
+  const od = document.querySelector('meta[property="og:description"]'); if (od) od.content = t("metaDesc");
+
+  document.querySelectorAll("[data-i18n]").forEach(el => { el.textContent = t(el.dataset.i18n); });
+  document.querySelectorAll("[data-i18n-html]").forEach(el => { el.innerHTML = t(el.dataset.i18nHtml); });
+  document.querySelectorAll("[data-school]").forEach(el => { el.textContent = CONFIG.schoolName; });
+  $("#consentText").textContent = t("consent", { school: CONFIG.schoolName });
+  form.elements.email.placeholder = t("emailPh");
+  form.elements.langue.value = lang;
+
+  document.querySelectorAll(".lang-switch button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.lang === lang)));
+
+  const box = $("#langs");
+  box.replaceChildren();
+  if (CONFIG.showProgrammes && I18N[lang].programmes.length) {
+    box.hidden = false;
+    const lab = document.createElement("span"); lab.className = "label"; lab.textContent = t("progLabel"); box.appendChild(lab);
+    I18N[lang].programmes.forEach(l => { const s = document.createElement("span"); s.className = "chip"; s.textContent = l; box.appendChild(s); });
+  } else box.hidden = true;
+
+  /* textes dynamiques */
+  renderAvailability(state.taken);
+  if (!state.sending) $("#submitBtn").textContent = state.full ? t("ctaWait") : t("cta");
+  else $("#submitBtn").textContent = t("sending");
+  fields.concat("consent").forEach(f => { if ($("#e-" + f).textContent) setErr(f, errMsg(f)); });
+  if ($("#formMsg").textContent) $("#formMsg").textContent = t("eSubmit");
+  if (state.result) renderDone();
+}
+
+document.querySelectorAll(".lang-switch button").forEach(b => b.addEventListener("click", () => setLang(b.dataset.lang, true)));
+
+$("#year").textContent = new Date().getFullYear();
+if (CONFIG.legalLine) $("#legalLine").textContent = CONFIG.legalLine;
+if (CONFIG.privacyUrl) { const a = $("#privacyLink"); a.href = CONFIG.privacyUrl; a.hidden = false; a.target = "_blank"; a.rel = "noopener"; }
+
+/* ---------- Origine de la publicité (UTM, gclid, fbclid) ---------- */
+(function captureSource(){
+  let saved = {};
+  try { saved = JSON.parse(sessionStorage.getItem("src") || "{}"); } catch (e) {}
+  const q = new URLSearchParams(location.search);
+  TRACK_KEYS.forEach(k => { if (q.get(k)) saved[k] = q.get(k).slice(0, 120); });
+  try { sessionStorage.setItem("src", JSON.stringify(saved)); } catch (e) {}
+  TRACK_KEYS.forEach(k => { const el = form.elements[k]; if (el) el.value = saved[k] || ""; });
+  form.elements.page.value = location.pathname;
+  form.elements.referrer.value = (document.referrer || "").slice(0, 200);
+})();
+
+/* ---------- Suivi des conversions (Google Ads / Meta) ---------- */
+(function loadTracking(){
+  if (CONFIG.googleTagId) {
+    const s = document.createElement("script"); s.async = true;
+    s.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(CONFIG.googleTagId);
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function(){ dataLayer.push(arguments); };
+    gtag("js", new Date()); gtag("config", CONFIG.googleTagId);
+  }
+  if (CONFIG.metaPixelId) {
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;
+    s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");
+    fbq("init", CONFIG.metaPixelId); fbq("track", "PageView");
+  }
+})();
+function trackLead(){
+  try {
+    if (window.gtag && CONFIG.googleAdsConversion) gtag("event", "conversion", { send_to: CONFIG.googleAdsConversion });
+    else if (window.gtag) gtag("event", "generate_lead");
+    if (window.fbq) fbq("track", "Lead");
+  } catch (e) {}
+}
+
+/* ---------- Disponibilité de l'offre ---------- */
+function renderAvailability(taken){
+  const total = CONFIG.totalSeats;
+  if (typeof taken !== "number") {
+    state.full = false;
+    $("#formTitle").textContent = t("formTitle");
+    $("#formSub").textContent = t("formSub");
+    $("#finalTitle").textContent = t("finalDefault");
+    return;
+  }
+  state.taken = taken;
+  const tk = Math.max(0, Math.min(total, taken));
+  state.full = tk >= total;
+  if (!state.full) {
+    $("#formTitle").textContent = t("formTitle");
+    $("#formSub").textContent = t("formSub");
+    $("#finalTitle").textContent = t("finalDefault");
+  } else {
+    $("#formTitle").textContent = t("waitTitle");
+    $("#formSub").textContent = t("waitSub");
+    $("#finalTitle").textContent = t("finalFull");
+  }
+  if (!state.sending) $("#submitBtn").textContent = state.full ? t("ctaWait") : t("cta");
+}
+
+async function loadStats(){
+  if (DEMO) { renderAvailability(0); return; }
+  const ctl = new AbortController(); const timer = setTimeout(() => ctl.abort(), 8000);
+  try {
+    const statsUrl = CONFIG.endpoint + (CONFIG.endpoint.includes("?") ? "&" : "?") + "action=stats";
+    const res = await fetch(statsUrl, { signal: ctl.signal, cache: "no-store" });
+    const data = await res.json();
+    if (typeof data.prises !== "number") throw new Error("format");
+    renderAvailability(data.prises);
+  } catch (e) {
+    console.error("Impossible de charger la disponibilité de l'offre.", e);
+  } finally { clearTimeout(timer); }
+}
+
+/* ---------- Validation et envoi ---------- */
+const fields = ["prenom","nom","email","ville"];
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+const ERR_KEYS = { prenom: "ePrenom", nom: "eNom", email: "eEmail", ville: "eVille", consent: "eConsent" };
+function errMsg(k){ return t(ERR_KEYS[k]); }
+function setErr(id, msg){
+  const input = form.elements[id], box = $("#e-" + id);
+  if (box) box.textContent = msg || "";
+  if (input && input.type !== "checkbox") input.setAttribute("aria-invalid", msg ? "true" : "false");
+}
+function validate(){
+  let first = null;
+  const v = n => form.elements[n].value.trim();
+  const bad = {
+    prenom: v("prenom").length < 1,
+    nom: v("nom").length < 1,
+    email: !EMAIL_RE.test(v("email")),
+    ville: v("ville").length < 2,
+    consent: !form.elements.consent.checked
+  };
+  Object.keys(bad).forEach(k => { setErr(k, bad[k] ? errMsg(k) : ""); if (bad[k] && !first) first = form.elements[k]; });
+  return first;
+}
+fields.forEach(f => form.elements[f].addEventListener("input", () => setErr(f, "")));
+form.elements.consent.addEventListener("change", () => setErr("consent", ""));
+
+function renderDone(){
+  $("#doneTitle").textContent = t("thanksTitle");
+}
+
+function showDone(r){
+  state.result = r;
+  $("#formView").style.display = "none";
+  const done = $("#doneView"); done.classList.add("on");
+  renderDone();
+  if (typeof r.prises === "number") renderAvailability(r.prises);
+  done.focus();
+  done.scrollIntoView({ behavior: "smooth", block: "center" });
+}
+
+form.addEventListener("submit", async e => {
+  e.preventDefault();
+  $("#formMsg").textContent = "";
+  const bad = validate();
+  if (bad) { bad.focus(); return; }
+  if (form.elements.website.value) { return; }          /* robot : on ignore sans rien dire */
+
+  const btn = $("#submitBtn");
+  state.sending = true; btn.disabled = true; btn.textContent = t("sending");
+  try {
+    if (DEMO) {
+      await new Promise(resolve => setTimeout(resolve, 450));
+      const result = {
+        ok: true,
+        admissible: true,
+        rang: (state.taken ?? 0) + 1,
+        prises: Math.min(CONFIG.totalSeats, (state.taken ?? 0) + 1),
+        doublon: false
+      };
+      state.taken = result.prises;
+      if (!result.doublon) trackLead();
+      state.sending = false;
+      showDone(result);
+      return;
+    }
+
+    const body = new URLSearchParams(new FormData(form));
+    body.set("consent", "oui");
+    body.set("langue", lang);
+    const ctl = new AbortController(); const timer = setTimeout(() => ctl.abort(), 20000);
+    const res = await fetch(CONFIG.endpoint, { method: "POST", body, signal: ctl.signal });
+    clearTimeout(timer);
+    const result = await res.json();
+    if (!result.ok) throw new Error(result.erreur || "serveur");
+    if (!result.doublon) trackLead();
+    state.sending = false;
+    showDone(result);
+  } catch (err) {
+    state.sending = false;
+    $("#formMsg").textContent = t("eSubmit");
+    btn.disabled = false; btn.textContent = state.full ? t("ctaWait") : t("cta");
+  }
+});
+
+/* ---------- Démarrage ---------- */
+setLang(pickInitialLang(), false);
+loadStats();
+</script>
+</body>
+</html>
