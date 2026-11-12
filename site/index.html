@@ -85,10 +85,10 @@ form{margin-top:18px;display:grid;gap:14px}
 .row2{display:grid;gap:14px}
 .field{display:grid;gap:6px;min-width:0}
 label,.label{font-weight:600;font-size:.92rem}
-input[type=text],input[type=email]{width:100%;font:inherit;font-size:1.02rem;color:var(--ink);background:var(--white);border:1.5px solid #B9C6D6;border-radius:12px;padding:13px 14px;min-height:50px}
+input[type=text],input[type=email],select{width:100%;font:inherit;font-size:1.02rem;color:var(--ink);background:var(--white);border:1.5px solid #B9C6D6;border-radius:12px;padding:13px 14px;min-height:50px}
 input::placeholder{color:#8798AE}
-input:hover{border-color:#8FA2BA}
-input:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 4px rgba(12,124,122,.18)}
+input:hover,select:hover{border-color:#8FA2BA}
+input:focus,select:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 4px rgba(12,124,122,.18)}
 input[aria-invalid=true]{border-color:var(--err);box-shadow:0 0 0 4px rgba(179,38,30,.12)}
 .err{color:var(--err);font-size:.85rem;min-height:0}
 .err:empty{display:none}
@@ -210,7 +210,7 @@ html[dir=rtl] .greets{justify-content:flex-end}
     <div class="form-card" id="inscription">
       <div id="formView">
         <h2 id="formTitle">Je réserve ma place</h2>
-        <p class="sub" id="formSub">Quatre champs, une minute. Remplir ce formulaire ne vous engage à rien.</p>
+        <p class="sub" id="formSub">Quelques champs, une minute. Remplir ce formulaire ne vous engage à rien.</p>
 
         <form id="leadForm" novalidate>
           <div class="row2">
@@ -234,6 +234,18 @@ html[dir=rtl] .greets{justify-content:flex-end}
             <label for="ville" data-i18n="lVille">Ville de résidence</label>
             <input id="ville" name="ville" type="text" autocomplete="address-level2" autocapitalize="words" maxlength="80" required aria-describedby="e-ville">
             <div class="err" id="e-ville" role="alert"></div>
+          </div>
+          <div class="field">
+            <label for="niveau" data-i18n="lNiveau">Niveau d'allemand</label>
+            <select id="niveau" name="niveau">
+              <option value="unknown" selected data-i18n="niveauUnknown">Je ne sais pas encore</option>
+              <option value="A1">A1</option>
+              <option value="A2">A2</option>
+              <option value="B1">B1</option>
+              <option value="B2">B2</option>
+              <option value="C1">C1</option>
+              <option value="C2">C2</option>
+            </select>
           </div>
 
           <label class="consent" for="consent">
@@ -375,13 +387,14 @@ const I18N = {
     finalDefault: "Réservez votre place pour profiter de l'offre.",
     finalFull: "L'offre est complète. Rejoignez la liste d'attente.",
     formTitle: "Je réserve ma place",
-    formSub: "Quatre champs, une minute. Remplir ce formulaire ne vous engage à rien.",
+    formSub: "Quelques champs, une minute. Remplir ce formulaire ne vous engage à rien.",
     waitTitle: "Rejoindre la liste d'attente",
     waitSub: "Vous serez prévenu(e) si l'offre revient. Ce formulaire ne vous engage à rien.",
     cta: "Je souhaite profiter de l'offre",
     ctaWait: "Je rejoins la liste d'attente",
     sending: "Envoi en cours…",
     lPrenom: "Prénom", lNom: "Nom", lEmail: "Adresse e-mail", lVille: "Ville de résidence",
+    lNiveau: "Niveau d'allemand", niveauUnknown: "Je ne sais pas encore",
     emailPh: "vous@exemple.com",
     consent: "J'accepte de recevoir des courriels de {school} au sujet de cette offre et de nos cours. Je peux me désabonner à tout moment.",
     fine: "Vos informations servent uniquement à vous répondre au sujet de cette offre.",
@@ -436,13 +449,14 @@ const I18N = {
     finalDefault: "Reserve your place and take advantage of the offer.",
     finalFull: "The offer is full. Join the waiting list.",
     formTitle: "Book my spot",
-    formSub: "Four fields, one minute. Filling in this form doesn't commit you to anything.",
+    formSub: "A few fields, one minute. Filling in this form doesn't commit you to anything.",
     waitTitle: "Join the waiting list",
     waitSub: "We'll let you know if the offer comes back. This form doesn't commit you to anything.",
     cta: "I want this offer",
     ctaWait: "Join the waiting list",
     sending: "Sending…",
     lPrenom: "First name", lNom: "Last name", lEmail: "Email address", lVille: "City of residence",
+    lNiveau: "German level", niveauUnknown: "I don't know yet",
     emailPh: "you@example.com",
     consent: "I agree to receive emails from {school} about this offer and our classes. I can unsubscribe at any time.",
     fine: "Your information is only used to reply to you about this offer.",
@@ -497,13 +511,14 @@ const I18N = {
     finalDefault: "احجز مقعدك للاستفادة من العرض.",
     finalFull: "اكتمل العرض. انضم إلى قائمة الانتظار.",
     formTitle: "أحجز مقعدي",
-    formSub: "أربع خانات، دقيقة واحدة. ملء هذه الاستمارة لا يُلزمك بأي شيء.",
+    formSub: "بعض الخانات، دقيقة واحدة. ملء هذه الاستمارة لا يُلزمك بأي شيء.",
     waitTitle: "الانضمام إلى قائمة الانتظار",
     waitSub: "سنُعلمك إذا عاد العرض. هذه الاستمارة لا تُلزمك بأي شيء.",
     cta: "أريد الاستفادة من العرض",
     ctaWait: "أنضم إلى قائمة الانتظار",
     sending: "جارٍ الإرسال…",
     lPrenom: "الاسم الشخصي", lNom: "اسم العائلة", lEmail: "البريد الإلكتروني", lVille: "مدينة الإقامة",
+    lNiveau: "مستوى اللغة الألمانية", niveauUnknown: "لا أعرف بعد",
     emailPh: "you@example.com",
     consent: "أوافق على تلقي رسائل بريد إلكتروني من {school} بخصوص هذا العرض ودروسنا. يمكنني إلغاء الاشتراك في أي وقت.",
     fine: "تُستخدم معلوماتك فقط للرد عليك بخصوص هذا العرض.",

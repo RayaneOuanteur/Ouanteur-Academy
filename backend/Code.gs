@@ -26,10 +26,11 @@ const SHEET_TOP = '20 premiers';
 const ST_OK = 'Admissible';
 const ST_WAIT = "Liste d'attente";
 const COMMERCIAL = ['Nouveau', 'Contacté', 'Test de niveau planifié', 'Inscrit', 'Perdu', 'Désabonné'];
+const LEVELS = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2', 'unknown'];
 
 const HEADERS = ['ID', 'Date', 'Rang', 'Statut offre', 'Prénom', 'Nom', 'E-mail', 'Ville',
   'Source', 'Support', 'Campagne', 'Contenu', 'Mot-clé', 'GCLID', 'FBCLID', 'Page', 'Référent',
-  'Consentement', 'Relances envoyées', 'Statut commercial', 'Notes'];
+  'Consentement', 'Relances envoyées', 'Statut commercial', 'Notes', 'Niveau'];
 const COL = {};
 HEADERS.forEach(function (h, i) { COL[h] = i + 1; });
 
@@ -57,8 +58,10 @@ function doPost(e) {
 
     const prenom = clean_(p.prenom, 60), nom = clean_(p.nom, 60), ville = clean_(p.ville, 80);
     const email = clean_(p.email, 120).toLowerCase();
+    const niveau = clean_(p.niveau, 40) || 'unknown';
     if (!prenom || !nom || ville.length < 2) return json_({ ok: false, erreur: 'champs' });
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) return json_({ ok: false, erreur: 'email' });
+    if (LEVELS.indexOf(niveau) === -1) return json_({ ok: false, erreur: 'niveau' });
     if (p.consent !== 'oui') return json_({ ok: false, erreur: 'consentement' });
 
     const sh = prospectsSheet_();
@@ -93,7 +96,7 @@ function doPost(e) {
       id, now, rang, admissible ? ST_OK : ST_WAIT, prenom, nom, email, ville,
       source, clean_(p.utm_medium, 80), clean_(p.utm_campaign, 120), clean_(p.utm_content, 120), clean_(p.utm_term, 120),
       gclid, fbclid, clean_(p.page, 120), clean_(p.referrer, 200),
-      'Oui, ' + dateFr_(now), 0, 'Nouveau', ''
+      'Oui, ' + dateFr_(now), 0, 'Nouveau', '', niveau === 'unknown' ? 'Je ne sais pas encore' : niveau
     ];
     sh.appendRow(row.map(safeCell_));
 
@@ -223,7 +226,7 @@ function setup() {
     .setFontWeight('bold').setBackground('#0A1A2E').setFontColor('#FFFFFF');
   sh.setFrozenRows(1);
   sh.getRange(2, COL['Date'], 2000, 1).setNumberFormat('yyyy-mm-dd hh:mm');
-  const widths = { 'ID': 80, 'Date': 130, 'Rang': 55, 'Statut offre': 110, 'Prénom': 110, 'Nom': 110, 'E-mail': 220, 'Ville': 120, 'Statut commercial': 170, 'Notes': 260 };
+  const widths = { 'ID': 80, 'Date': 130, 'Rang': 55, 'Statut offre': 110, 'Prénom': 110, 'Nom': 110, 'E-mail': 220, 'Ville': 120, 'Statut commercial': 170, 'Notes': 260, 'Niveau': 130 };
   Object.keys(widths).forEach(function (h) { sh.setColumnWidth(COL[h], widths[h]); });
   const valid = SpreadsheetApp.newDataValidation().requireValueInList(COMMERCIAL, true).setAllowInvalid(false).build();
   sh.getRange(2, COL['Statut commercial'], 2000, 1).setDataValidation(valid);

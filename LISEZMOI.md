@@ -24,6 +24,8 @@ Après toute modification du script : **Déployer > Gérer les déploiements > M
 
 Si les formules du « Tableau de bord » ou de « 20 premiers » affichent `#ERROR!`, remplacez le code Apps Script par la dernière version de `backend/Code.gs`, puis exécutez `setup` de nouveau. Les onglets de résumé sont recréés avec les séparateurs adaptés à la langue du classeur; les demandes de l'onglet « Prospects » sont conservées.
 
+Le formulaire demande aussi le niveau d'allemand. Après avoir mis à jour `backend/Code.gs`, exécutez `setup` pour ajouter l'en-tête « Niveau » à l'onglet « Prospects », puis créez une nouvelle version du déploiement Web. Les demandes existantes sont conservées; leur colonne « Niveau » reste vide.
+
 ## 2. La page
 
 1. Ouvrez `site/index.html` dans un éditeur de texte. Dans le bloc `CONFIG` du script :
