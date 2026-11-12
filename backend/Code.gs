@@ -11,8 +11,8 @@ const CONFIG = {
   SCHOOL_NAME: 'Ouanteur Academy',
   TOTAL_SEATS: 20,              // nombre de places à -20 % (doit être identique à totalSeats dans index.html)
   DISCOUNT: '20 %',
-  OWNER_EMAIL: '',              // reçoit une alerte à chaque nouveau prospect (vide = aucune alerte)
-  REPLY_TO: '',                 // adresse qui reçoit les réponses des prospects (vide = votre adresse Google)
+  OWNER_EMAIL: 'ouanteur.academy@gmail.com', // reçoit une alerte à chaque nouveau prospect
+  REPLY_TO: 'ouanteur.academy@gmail.com',    // adresse qui reçoit les réponses des prospects
   BOOKING_URL: '',              // lien de prise de rendez-vous (Calendly, Google Agenda…), facultatif
   SENDER_ADDRESS: '',           // adresse postale de l'école : exigée dans les courriels commerciaux au Canada (LCAP/CASL)
   OFFER_DAYS: 7,                // durée pendant laquelle la place à -20 % est réservée
