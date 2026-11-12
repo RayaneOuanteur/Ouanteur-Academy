@@ -271,6 +271,7 @@ html[dir=rtl] .greets{justify-content:flex-end}
       <div class="done" id="doneView" tabindex="-1">
         <div class="tick" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
         <h2 id="doneTitle"></h2>
+        <p id="doneText"></p>
       </div>
     </div>
   </div>
@@ -405,7 +406,8 @@ const I18N = {
     eVille: "Entrez votre ville de résidence.",
     eConsent: "Cochez la case pour recevoir notre réponse par courriel.",
     eSubmit: "Une erreur est survenue, votre demande n'a pas été enregistrée. Vérifiez votre connexion puis réessayez.",
-    thanksTitle: "Merci !",
+    thanksTitle: "Merci pour votre confiance !",
+    thanksText: "Votre demande a bien été reçue. Nous sommes ravis de vous accompagner dans votre projet d'apprendre l'allemand. À très bientôt par e-mail !",
     whyKicker: "Pourquoi Ouanteur Academy",
     whyTitle: "Un allemand utile pour vos tests et votre projet en Allemagne",
     b1t: "Depuis chez vous, où que vous soyez",
@@ -467,7 +469,8 @@ const I18N = {
     eVille: "Enter your city of residence.",
     eConsent: "Tick the box so we can reply to you by email.",
     eSubmit: "Something went wrong and your request was not saved. Check your connection and try again.",
-    thanksTitle: "Thank you!",
+    thanksTitle: "Thank you for getting in touch!",
+    thanksText: "We've received your request and are delighted to support you on your journey to learning German. We look forward to speaking with you by email!",
     whyKicker: "Why Ouanteur Academy",
     whyTitle: "Practical German for your tests and your plans in Germany",
     b1t: "From home, wherever you are",
@@ -529,7 +532,8 @@ const I18N = {
     eVille: "أدخل مدينة إقامتك.",
     eConsent: "ضع علامة في الخانة لنتمكن من الرد عليك عبر البريد الإلكتروني.",
     eSubmit: "حدث خطأ ولم يتم تسجيل طلبك. تحقق من اتصالك بالإنترنت ثم أعد المحاولة.",
-    thanksTitle: "شكرًا!",
+    thanksTitle: "شكرًا لثقتك بنا!",
+    thanksText: "وصلنا طلبك، ويسعدنا أن نرافقك في رحلتك لتعلّم الألمانية. سنتواصل معك قريبًا عبر البريد الإلكتروني!",
     whyKicker: "لماذا أكاديمية Ouanteur",
     whyTitle: "ألمانية مفيدة لاختباراتك ولمشروعك في ألمانيا",
     b1t: "من منزلك، أينما كنت",
@@ -736,6 +740,7 @@ form.elements.consent.addEventListener("change", () => setErr("consent", ""));
 
 function renderDone(){
   $("#doneTitle").textContent = t("thanksTitle");
+  $("#doneText").textContent = t("thanksText");
 }
 
 function showDone(r){
