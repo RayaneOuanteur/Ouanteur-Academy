@@ -1,0 +1,20 @@
+CREATE TABLE "inscriptions" (
+	"id" serial PRIMARY KEY,
+	"prenom" text NOT NULL,
+	"nom" text NOT NULL,
+	"email" text NOT NULL UNIQUE,
+	"ville" text NOT NULL,
+	"langue" text DEFAULT 'fr' NOT NULL,
+	"admissible" boolean NOT NULL,
+	"consent" boolean DEFAULT true NOT NULL,
+	"utm_source" text,
+	"utm_medium" text,
+	"utm_campaign" text,
+	"utm_content" text,
+	"utm_term" text,
+	"gclid" text,
+	"fbclid" text,
+	"page" text,
+	"referrer" text,
+	"created_at" timestamp DEFAULT now() NOT NULL
+);
